@@ -11,10 +11,15 @@ namespace ChurchWeb.Models
     {
         [Key]
         public int VideoId { get; set; }
+        [DisplayName("User Name")]
+        public string UserName { get; set; }
         [DisplayName("Vidoe Name"),Required]
         public string FileName { get; set; }
         [DisplayName("Content Type")]
         public string ContentType { get; set; }
         public byte[] Data { get; set; }
+        public int LIkes { get; set; }
+        [DisplayName("Small Description")]
+        public string SmallDescription { get; set; }
     }
 }

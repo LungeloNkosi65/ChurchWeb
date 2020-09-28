@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ChurchWeb.Models;
+using Microsoft.Ajax.Utilities;
+using System.EnterpriseServices;
 
 namespace ChurchWeb.Controllers
 {
@@ -17,6 +19,7 @@ namespace ChurchWeb.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -151,11 +154,25 @@ namespace ChurchWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.Gender="Female";
+                
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                var member = new Members();
+                member.FirstName = model.FirstName;
+                member.LastName = model.LastName;
+                member.Address = model.Address;
+                member.ContactNumber = model.ContactNumber;
+                member.Gender = model.Gender;
+                member.MemberEmail = model.Email;
+                member.MemberId = user.Id;
+                member.Gender = model.Gender;
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    db.Members.Add(member);
+                    db.SaveChanges();
+                    UserManager.AddToRole(user.Id, "Member");
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link

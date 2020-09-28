@@ -23,11 +23,15 @@ namespace ChurchWeb.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        public DbSet<VidoeFile> VidoeFiles { get; set; }
+        public DbSet<Members> Members { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

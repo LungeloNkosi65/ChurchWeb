@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ChurchWeb.Models
@@ -64,10 +65,19 @@ namespace ChurchWeb.Models
 
     public class RegisterViewModel
     {
+        [DisplayName("First Name"),Required]
+        public string FirstName { get; set; }
+        [DisplayName("Last Name"), Required]
+        public string LastName { get; set; }
+        public string Gender { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [DisplayName("Contact Number"), Required]
+        public string ContactNumber { get; set; }
+        [Required]
+        public string Address { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
