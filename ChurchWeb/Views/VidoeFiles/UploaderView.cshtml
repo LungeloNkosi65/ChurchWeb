@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ChurchWeb.Models.VidoeFile>
+@{
+    ViewBag.Title = "UploaderView";
+}
+<style>
+    .head-v {
+        text-align: center !important;
+    }
+ 
+</style>
+
+@if (!User.IsInRole("Member"))
+{
+    <h2 class="head-v">Sermons</h2>
+}
+else
+{
+    <h2 class="head-v"> My Sermons Upload</h2>
+}
+
+
+@*<p>
+
+
+    @Html.ActionLink("Upload New", "Create")
+</p>*@
+<p><a class="btn btn-success" onclick="location.href='@Url.Action("Create","VidoeFiles")'">Upload New</a></p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIkes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmallDescription)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+
+    @foreach (var item in Model)
+    {
+
+
+
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentType)
+            </td>
+            <td>
+                <video id="VideoPlayer" src='@Url.Action("DownloadFile", "VidoeFiles", new {fileId = item.VideoId})' controls="true"
+                       width="200" height="150" loop="true" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LIkes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SmallDescription)
+            </td>
+            <td class="actions-sections">
+                @*<p><a class="btn btn-warning" onclick="location.href='@Url.Action("Edit","VidoeFiles", new { id =item.VideoId})'">Edit</a></p>
+                <p><a class="btn btn-success" onclick="location.href='@Url.Action("Details","VidoeFiles", new { id =item.VideoId})'">Details</a></p>
+                <p><a class="btn btn-danger" onclick="location.href='@Url.Action("Delete","VidoeFiles", new { id =item.VideoId})'">Delete</a></p>*@
+                @Html.ActionLink("Edit", "Edit", new { id = item.VideoId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VideoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VideoId })
+            </td>
+        </tr>
+    }
+
+</table>

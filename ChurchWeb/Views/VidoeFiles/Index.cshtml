@@ -1,0 +1,147 @@
+﻿@model IEnumerable<ChurchWeb.Models.VidoeFile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .head-v{
+        text-align:center !important;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        height: 450px !important;
+        margin-bottom: 20px !important;
+        border: groove !important;
+        margin-top: 20px !important;
+    }
+
+      /*  .card:hover {
+            border-radius: 10px;
+            border-color: aqua !important;
+        }*/
+
+    .top-head {
+        align-content: center;
+        text-align: center !important;
+    }
+</style>
+
+@if (!User.IsInRole("Member"))
+{
+    <h2 class="head-v">Sermons</h2>
+}
+else
+{
+    <h2 class="head-v"> My Sermons</h2>
+}
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LIkes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SmallDescription)
+            </th>
+            <th></th>
+        </tr>
+
+
+
+
+        @foreach (var item in Model)
+        {
+
+
+
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContentType)
+                </td>
+                <td>
+                    <video id="VideoPlayer" src='@Url.Action("DownloadFile", "Home", new {fileId = item.VideoId})' controls="true"
+                           width="400" height="350" loop="true" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LIkes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SmallDescription)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.VideoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.VideoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.VideoId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+<style>
+    .card-text {
+        /*padding-top: 20px !important;*/
+    }
+    .time-uploaded{
+
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card" style="padding-left:20px !important;">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.FileName)</h4>
+
+
+                    <div class="video-section" style="padding-bottom:10px !important;">
+                        <video id="VideoPlayer" src='@Url.Action("DownloadFile", "VidoeFiles", new {fileId = item.VideoId})' controls="true"
+                               width="250" height="250" loop="true" />
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Description: <strong>@Html.DisplayFor(modelItem => item.SmallDescription)</strong> </p>
+                        <p class="card-text">Uploaded by: <strong>@Html.DisplayFor(modelItem => item.UserName)</strong> </p>
+                        <p class="card-text">
+                            <span>  Likes @Html.DisplayFor(modelItem => item.LIkes)</span>
+                            <span class="time-uploaded">  Likes @Html.DisplayFor(modelItem => item.TimeULoaded)</span>
+                        </p>
+                        @*<p><button class="btn-success">LIke Video</button></p>*@
+                        <p><a class="btn btn-success" onclick="location.href='@Url.Action("LIkeVideo","VidoeFiles", new { id =item.VideoId})'">Like Video</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -101,8 +101,8 @@ C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\bin\Microsoft.Owin.Security.Tw
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csprojAssemblyReference.cache
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csproj.CoreCompileInputs.cache
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csproj.CopyComplete
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.dll
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.pdb
+C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csprojAssemblyReference.cache

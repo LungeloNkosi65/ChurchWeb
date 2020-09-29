@@ -171,12 +171,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\VidoeFilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\ChurchLogic.cs" />
+    <Compile Include="Models\EmailSender.cs" />
+    <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
@@ -245,6 +249,12 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\VidoeFiles\Create.cshtml" />
+    <Content Include="Views\VidoeFiles\Delete.cshtml" />
+    <Content Include="Views\VidoeFiles\Details.cshtml" />
+    <Content Include="Views\VidoeFiles\Edit.cshtml" />
+    <Content Include="Views\VidoeFiles\Index.cshtml" />
+    <Content Include="Views\VidoeFiles\UploaderView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
