@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ChurchWeb.Models.Anouncement>
+
+@{
+    ViewBag.Title = "Announcements";
+}
+
+
+<style>
+    .head-t{
+        text-align:center;
+        font-family:sans-serif;
+        font-display:block;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        height: auto !important;
+        margin-bottom: 20px !important;
+        border: groove !important;
+        margin-top: 20px !important;
+        
+    }
+    .card-title{
+        color:black !important;
+        font-weight:bolder !important;
+    }
+
+</style>
+
+<h2 class="head-t">All Anouncements</h2>
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+        <div class="col-md-4">
+            <div class="card">
+                
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h4>
+                    <p class="card-text">Announce ment : <strong>@Html.DisplayFor(modelItem => item.Description)</strong> </p>
+                    <p class="card-text">Announcemnet Time :<strong>@Html.DisplayFor(modelItem => item.TimeMade)</strong> </p>
+
+                </div>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>
+
+
+
+
+

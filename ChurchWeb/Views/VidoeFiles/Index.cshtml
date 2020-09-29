@@ -133,8 +133,8 @@ else
                         <p class="card-text">Description: <strong>@Html.DisplayFor(modelItem => item.SmallDescription)</strong> </p>
                         <p class="card-text">Uploaded by: <strong>@Html.DisplayFor(modelItem => item.UserName)</strong> </p>
                         <p class="card-text">
-                            <span>  Likes @Html.DisplayFor(modelItem => item.LIkes)</span>
-                            <span class="time-uploaded">  Likes @Html.DisplayFor(modelItem => item.TimeULoaded)</span>
+                            <span> <strong> Likes</strong> @Html.DisplayFor(modelItem => item.LIkes)</span>
+                            <span class="time-uploaded">  <strong>Uploaded..</strong> @Html.DisplayFor(modelItem => item.TimeULoaded)</span>
                         </p>
                         @*<p><button class="btn-success">LIke Video</button></p>*@
                         <p><a class="btn btn-success" onclick="location.href='@Url.Action("LIkeVideo","VidoeFiles", new { id =item.VideoId})'">Like Video</a></p>

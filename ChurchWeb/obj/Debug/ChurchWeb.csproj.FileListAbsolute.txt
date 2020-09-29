@@ -105,4 +105,3 @@ C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csproj.Cor
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csproj.CopyComplete
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.dll
 C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.pdb
-C:\Users\Lungelo\source\repos\ChurchWeb\ChurchWeb\obj\Debug\ChurchWeb.csprojAssemblyReference.cache

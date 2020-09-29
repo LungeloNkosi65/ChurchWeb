@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ChurchWeb.Models.Donation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (!User.IsInRole("Member"))
+{
+    <h2> All Donations</h2>
+}
+else
+{
+    <h2> My Donations</h2>
+}
+
+
+
+<p><a class="btn btn-success" onclick="location.href='@Url.Action("Create","Donations")'">Create New</a></p>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationType.TypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDonated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DropInDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonationType.TypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDonated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DropInDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+
+            @if (item.Status == "Delivered")
+            {
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.DonationId }) |*@
+                    @Html.ActionLink("Details", "Details", new { id = item.DonationId }) 
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.DonationId })*@
+                </td>
+            }
+            else
+            {
+        <td>
+            @Html.ActionLink("Edit |", "Edit", new { id = item.DonationId }) 
+            @Html.ActionLink("Details |", "Details", new { id = item.DonationId }) 
+            @Html.ActionLink("Cancel |", "Delete", new { id = item.DonationId }) 
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delivered", "Delivered", new { id = item.DonationId })
+
+            }
+
+        </td>
+            }
+
+        </tr>
+    }
+
+</table>

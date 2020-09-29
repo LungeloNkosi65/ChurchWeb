@@ -27,12 +27,19 @@
                     {
                         <li>@Html.ActionLink("My Details", "Index", "Members")</li>
                         <li>@Html.ActionLink("Sermons", "Index", "VidoeFiles")</li>
+                        <li>@Html.ActionLink("Make Donation", "Index", "Donations")</li>
+                        <li>@Html.ActionLink("Announcements", "AnouncementsV", "Anouncements")</li>
+
+
 
                     }
                     @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Members", "Index", "Members")</li>
                         <li>@Html.ActionLink("Sermons", "UploaderView", "VidoeFiles")</li>
+                        <li>@Html.ActionLink("All Donation", "Index", "Donations")</li>
+                        <li>@Html.ActionLink("Donation Types", "Index", "DonationTypes")</li>
+                        <li>@Html.ActionLink("Make Announcement", "Index", "Anouncements")</li>
 
                     }
 

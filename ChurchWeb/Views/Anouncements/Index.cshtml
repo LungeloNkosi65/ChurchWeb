@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ChurchWeb.Models.Anouncement>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Anouncements</h2>
+
+    <p><a class="btn btn-success" onclick="location.href='@Url.Action("Create","Anouncements")'">Make New</a></p>
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeMade)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeMade)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AnnouncementId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AnnouncementId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AnnouncementId })
+            </td>
+        </tr>
+    }
+
+</table>

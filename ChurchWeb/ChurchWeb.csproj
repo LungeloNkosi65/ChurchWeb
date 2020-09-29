@@ -168,6 +168,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnouncementsController.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\DonationTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
@@ -178,7 +181,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Anouncement.cs" />
     <Compile Include="Models\ChurchLogic.cs" />
+    <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\DonationType.cs" />
     <Compile Include="Models\EmailSender.cs" />
     <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -255,6 +261,22 @@
     <Content Include="Views\VidoeFiles\Edit.cshtml" />
     <Content Include="Views\VidoeFiles\Index.cshtml" />
     <Content Include="Views\VidoeFiles\UploaderView.cshtml" />
+    <Content Include="Views\Donations\Create.cshtml" />
+    <Content Include="Views\Donations\Delete.cshtml" />
+    <Content Include="Views\Donations\Details.cshtml" />
+    <Content Include="Views\Donations\Edit.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\DonationTypes\Create.cshtml" />
+    <Content Include="Views\DonationTypes\Delete.cshtml" />
+    <Content Include="Views\DonationTypes\Details.cshtml" />
+    <Content Include="Views\DonationTypes\Edit.cshtml" />
+    <Content Include="Views\DonationTypes\Index.cshtml" />
+    <Content Include="Views\Anouncements\Create.cshtml" />
+    <Content Include="Views\Anouncements\Delete.cshtml" />
+    <Content Include="Views\Anouncements\Details.cshtml" />
+    <Content Include="Views\Anouncements\Edit.cshtml" />
+    <Content Include="Views\Anouncements\Index.cshtml" />
+    <Content Include="Views\Anouncements\AnouncementsV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

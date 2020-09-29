@@ -19,29 +19,14 @@ namespace ChurchWeb.Controllers
         // GET: VidoeFiles
         public ActionResult Index()
         {
-            var userName = User.Identity.GetUserName();
-            if (!User.IsInRole("Member"))
-            {
                 return View(db.VidoeFiles.ToList());
-            }
-            else
-            {
-                return View(db.VidoeFiles.ToList().Where(x=>x.UserName==userName));
-            }
+          
             
         }
 
         public ActionResult UploaderView()
         {
-            var userName = User.Identity.GetUserName();
-            if (!User.IsInRole("Member"))
-            {
-                return View(db.VidoeFiles.ToList());
-            }
-            else
-            {
-                return View(db.VidoeFiles.ToList().Where(x => x.UserName == userName));
-            }
+            return View(db.VidoeFiles.ToList());
         }
 
         [Authorize]

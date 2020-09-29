@@ -33,5 +33,11 @@ namespace ChurchWeb.Models
         public DbSet<VidoeFile> VidoeFiles { get; set; }
         public DbSet<Members> Members { get; set; }
         public DbSet<Admin> Admins { get; set; }
+
+        public System.Data.Entity.DbSet<ChurchWeb.Models.Donation> Donations { get; set; }
+
+        public System.Data.Entity.DbSet<ChurchWeb.Models.DonationType> DonationTypes { get; set; }
+
+        public System.Data.Entity.DbSet<ChurchWeb.Models.Anouncement> Anouncements { get; set; }
     }
 }

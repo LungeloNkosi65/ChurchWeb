@@ -40,7 +40,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Data)
+            <video id="VideoPlayer" src='@Url.Action("DownloadFile", "VidoeFiles")' controls="true"
+                   width="200" height="150" loop="true" />
         </dd>
 
         <dt>

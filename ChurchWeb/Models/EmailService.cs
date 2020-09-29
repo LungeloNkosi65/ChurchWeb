@@ -53,4 +53,3 @@ namespace ChurchWeb.Models
         public List<Attachment> mailAttachments { get; set; }
     }
 }
-}
