@@ -39,5 +39,7 @@ namespace ChurchWeb.Models
         public System.Data.Entity.DbSet<ChurchWeb.Models.DonationType> DonationTypes { get; set; }
 
         public System.Data.Entity.DbSet<ChurchWeb.Models.Anouncement> Anouncements { get; set; }
+
+        public System.Data.Entity.DbSet<ChurchWeb.Models.CashDonation> CashDonations { get; set; }
     }
 }

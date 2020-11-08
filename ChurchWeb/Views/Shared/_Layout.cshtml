@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top text-white" style=" background-color:#333333 !important;">
+    <div class="navbar navbar-inverse navbar-fixed-top text-white" style="background-color: ##318bd9 !important;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,9 +37,18 @@
                     {
                         <li>@Html.ActionLink("Members", "Index", "Members")</li>
                         <li>@Html.ActionLink("Sermons", "UploaderView", "VidoeFiles")</li>
-                        <li>@Html.ActionLink("All Donation", "Index", "Donations")</li>
-                        <li>@Html.ActionLink("Donation Types", "Index", "DonationTypes")</li>
+                        
+                        
                         <li>@Html.ActionLink("Make Announcement", "Index", "Anouncements")</li>
+                       
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Manage Donations<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Make Cash Donation", "Index", "CashDonations")</li>
+                                <li>@Html.ActionLink("Donation Types", "Index", "DonationTypes")</li>
+                                <li>@Html.ActionLink("All Donation", "Index", "Donations")</li>
+                            </ul>
+                        </li>
 
                     }
 

@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PayFast, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayFast.1.0.4\lib\net462\PayFast.dll</HintPath>
+    </Reference>
+    <Reference Include="PayFast.AspNet, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayFast.AspNet.1.0.4\lib\net46\PayFast.AspNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -169,11 +175,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnouncementsController.cs" />
+    <Compile Include="Controllers\CashDonationsController.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\DonationTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\VidoeFilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +190,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Anouncement.cs" />
+    <Compile Include="Models\CashDonation.cs" />
     <Compile Include="Models\ChurchLogic.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\DonationType.cs" />
@@ -277,9 +286,15 @@
     <Content Include="Views\Anouncements\Edit.cshtml" />
     <Content Include="Views\Anouncements\Index.cshtml" />
     <Content Include="Views\Anouncements\AnouncementsV.cshtml" />
+    <Content Include="Views\CashDonations\Create.cshtml" />
+    <Content Include="Views\CashDonations\Delete.cshtml" />
+    <Content Include="Views\CashDonations\Details.cshtml" />
+    <Content Include="Views\CashDonations\Edit.cshtml" />
+    <Content Include="Views\CashDonations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ChurchWeb.Models.CashDonation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cash Donations</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationType.TypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaptureEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCaptured)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationType.TypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaptureEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCaptured)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CashDonationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CashDonationId }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.CashDonationId })*@
+        </td>
+    </tr>
+}
+
+</table>
