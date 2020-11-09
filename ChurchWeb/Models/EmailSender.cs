@@ -31,29 +31,34 @@ namespace ChurchWeb.Models
         //    });
         //}
 
-        //public static void ConfirmBookingEmail(Booking booking)
-        //{
-        //    var mailTo = new List<MailAddress>();
-        //    mailTo.Add(new MailAddress(booking.CustomereEmail, GetCustomerName(booking.CustomereEmail)));
-        //    var body = $"Good Day {GetCustomerName(booking.CustomereEmail)}," +
-        //        $" Your booking has been successfuly completed please wait for further instructions then all will be set and ready." +
-        //        $" Please ensure to pay your booking fee of {booking.BookingPrice}." +
+        public static void AnnouncementEmail(Anouncement anouncement)
+        {
+            var users = db.Members.ToList();
+            foreach (var item in users)
+            {
+                var mailTo = new List<MailAddress>();
+                mailTo.Add(new MailAddress(item.MemberEmail, item.FirstName));
+                var body = $"Good Day {item.FirstName}, \n" +
+                    $" {anouncement.Description}." +
 
-        //        $"<br/> This email confrims your  booking , if you have anny further enquiries feel free to contact us.";
+                    $"<br/> Your received this email beacause your a member on the Churh Web.";
 
-        //    EmailService emailService = new EmailService();
-        //    emailService.SendEmail(new EmailContent()
-        //    {
-        //        mailTo = mailTo,
-        //        mailCc = new List<MailAddress>(),
-        //        mailSubject = $"{booking.BookingStatus}!!  | Ref No.:" + booking.BookingId,
-        //        mailBody = body,
-        //        mailFooter = $"<br/> Kind Regards, <br/> <b>Beyond Tech Solutions </b>",
-        //        mailPriority = MailPriority.High,
-        //        mailAttachments = new List<Attachment>()
+                EmailService emailService = new EmailService();
+                emailService.SendEmail(new EmailContent()
+                {
+                    mailTo = mailTo,
+                    mailCc = new List<MailAddress>(),
+                    mailSubject = $"{anouncement.Title}!!  | Anouncement Date :" + DateTime.Now ,
+                    mailBody = body,
+                    mailFooter = $"<br/> Kind Regards, <br/> <b>Church Web </b>",
+                    mailPriority = MailPriority.High,
+                    mailAttachments = new List<Attachment>()
 
-        //    });
-        //}
+                });
+            }
+
+            
+        }
 
         public static string GetCustomerName(string customerEmail)
         {

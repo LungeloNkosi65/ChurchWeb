@@ -68,6 +68,7 @@ namespace ChurchWeb.Controllers
                 anouncement.TimeMade = DateTime.Now;
                 db.Anouncements.Add(anouncement);
                 db.SaveChanges();
+                EmailSender.AnnouncementEmail(anouncement);
                 return RedirectToAction("Index");
             }
 
